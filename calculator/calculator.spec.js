@@ -47,6 +47,21 @@ describe("calculator unit tests", ()=> {
             expect(calculator.quotient(1)).toBe(1)
             expect(()=> calculator.quotient(1,0)).toThrow()
         })
+        
+
+        it("parses", ()=> {
+            expect(calculator.parse({
+                sum: [1,2,3],
+                difference: [3,2,1],
+                product: [1,2,3],
+                quotient: [2,2,2]
+            })).toEqual({
+                sum: 6,
+                difference: 0,
+                product: 6,
+                quotient: 0.5,
+            })
+        })
 
 
 
